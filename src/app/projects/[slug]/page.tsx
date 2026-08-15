@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProjectCover from "@/components/ProjectCover";
 import { getProjectBySlug, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -65,8 +66,8 @@ export default async function ProjectDetailPage({
         {project.title}
       </h1>
 
-      <div className="mt-10 flex aspect-video w-full items-center justify-center rounded-xl border border-dashed border-border bg-bg-elevated text-sm text-text-muted">
-        Dashboard preview coming soon
+      <div className="mt-10 overflow-hidden rounded-xl">
+        <ProjectCover slug={project.slug} size="banner" />
       </div>
 
       <div className="mt-12 flex flex-col gap-10">

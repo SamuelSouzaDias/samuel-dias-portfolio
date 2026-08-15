@@ -30,9 +30,9 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-out after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gold after:shadow-[0_2px_10px_1px_rgba(176,141,43,0.4)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:scale-x-100 motion-reduce:after:transition-none motion-reduce:transition-none ${
                   active
-                    ? "text-gold"
+                    ? "text-gold after:scale-x-100"
                     : "text-text-muted hover:text-text"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Nav() {
         <div className="hidden lg:block">
           <Link
             href={site.resumeComplete}
-            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-bg transition-[filter,box-shadow] duration-200 ease-out hover:shadow-[0_0_22px_4px_rgba(176,141,43,0.3)] hover:brightness-110 motion-reduce:transition-none"
           >
             Download Resume
           </Link>

@@ -30,7 +30,7 @@ export default function ContactPage() {
             href={link.href}
             target={link.href.startsWith("http") ? "_blank" : undefined}
             rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="rounded-md border border-border px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-gold hover:text-gold"
+            className="rounded-md border border-border px-6 py-3 text-sm font-semibold text-text transition-[color,border-color,filter,box-shadow] duration-200 ease-out hover:border-gold hover:text-gold hover:shadow-[0_0_20px_3px_rgba(176,141,43,0.28)] hover:brightness-110 motion-reduce:transition-none"
           >
             {link.label}
           </a>
