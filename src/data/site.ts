@@ -2,7 +2,7 @@ export const site = {
   name: "Samuel Dias",
   role: "Data & Analytics Engineer",
   tagline: "with 4+ years of BI foundation",
-  email: "samuelsouzadias@outlook.com",
+  email: "samuel.dias.career@outlook.com",
   linkedin: "https://www.linkedin.com/in/samuelsouzadias",
   github: "https://github.com/SamuelSouzaDias",
   resumeComplete: "/resume/samuel-dias-resume-complete.pdf",
