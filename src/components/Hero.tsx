@@ -13,7 +13,7 @@ export default function Hero() {
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-text sm:text-5xl">
             Data &amp; Analytics Engineer
             <span className="block text-text-muted">
-              — in transition, with 4+ years of BI foundation
+              — with 4+ years of BI foundation
             </span>
           </h1>
           <p className="mx-auto max-w-xl text-lg leading-relaxed text-text-muted lg:mx-0">
