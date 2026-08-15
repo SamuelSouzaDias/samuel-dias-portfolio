@@ -2,7 +2,7 @@
 
 Professional portfolio for Samuel Dias, a data professional transitioning from Business Intelligence into Analytics Engineering / Data Engineering.
 
-Live site: _pending deployment_
+Live site: [samuel-dias-portfolio.vercel.app](https://samuel-dias-portfolio.vercel.app)
 
 ## Tech Stack
 
