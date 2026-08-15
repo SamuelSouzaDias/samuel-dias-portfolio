@@ -49,7 +49,7 @@ export default function Hero() {
             height={1100}
             priority
             sizes="(min-width: 1280px) 32rem, (min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
-            className="relative z-10 h-auto w-full object-contain"
+            className="hero-photo-mask relative z-10 h-auto w-full object-contain"
           />
         </div>
       </div>
