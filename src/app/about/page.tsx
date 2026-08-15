@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[220px] shrink-0 lg:mx-0">
           <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-border bg-bg-elevated">
             <Image
-              src="/images/samuel-photo.jpg"
+              src="/images/samuel-photo.png"
               alt="Samuel Dias"
               fill
               sizes="220px"
