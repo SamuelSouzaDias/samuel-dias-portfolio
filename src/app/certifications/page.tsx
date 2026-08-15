@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { GraduationCap } from "lucide-react";
 import { certifications } from "@/data/certifications";
+import { coverGradient } from "@/data/projectCovers";
 
 export const metadata: Metadata = {
   title: "Certifications",
@@ -17,8 +19,16 @@ export default function CertificationsPage() {
         Coming soon
       </h1>
 
-      <div className="mt-10 rounded-xl border border-border bg-bg-elevated p-8">
-        <p className="text-base leading-relaxed text-text-muted">
+      <div
+        className="relative mt-10 overflow-hidden rounded-xl border border-border border-t-4 border-t-gold p-8"
+        style={{ background: coverGradient }}
+      >
+        <GraduationCap
+          strokeWidth={1.5}
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-gold opacity-10"
+        />
+        <p className="relative text-base leading-relaxed text-text-muted">
           No formal certifications completed yet — currently preparing for
           the{" "}
           <span className="font-medium text-text">

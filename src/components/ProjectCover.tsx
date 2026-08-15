@@ -1,4 +1,8 @@
-import { largeProjectCoverIcons, projectCoverIcons } from "@/data/projectCovers";
+import {
+  coverGradient,
+  largeProjectCoverIcons,
+  projectCoverIcons,
+} from "@/data/projectCovers";
 
 const iconSizes = {
   card: { base: "h-16 w-16", large: "h-[4.5rem] w-[4.5rem]" },
@@ -22,9 +26,7 @@ export default function ProjectCover({
       className={`relative flex shrink-0 items-center justify-center border-t-4 border-gold ${
         size === "banner" ? "h-[280px] sm:h-[320px]" : "h-40"
       }`}
-      style={{
-        background: "linear-gradient(135deg, #0B1E3D 0%, #3C3014 100%)",
-      }}
+      style={{ background: coverGradient }}
     >
       {Icon && (
         <Icon strokeWidth={1.5} className={`text-gold opacity-25 ${sizeClass}`} />

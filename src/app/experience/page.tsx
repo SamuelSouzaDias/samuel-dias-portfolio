@@ -17,7 +17,8 @@ export default function ExperiencePage() {
 
       {experience.map((entry) => (
         <div key={entry.company} className="mt-3">
-          <h1 className="text-3xl font-bold tracking-tight text-text sm:text-4xl">
+          <div className="w-12 border-t-4 border-gold" />
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-text sm:text-4xl">
             {entry.role}
           </h1>
           <p className="mt-2 text-base text-text-muted">

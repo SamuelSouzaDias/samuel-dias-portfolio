@@ -21,7 +21,7 @@ export default function SkillsPage() {
         {skills.map((group) => (
           <div
             key={group.category}
-            className="rounded-xl border border-border bg-bg-elevated p-6"
+            className="rounded-xl border border-border border-t-4 border-t-gold bg-bg-elevated p-6"
           >
             <h2 className="text-lg font-semibold text-gold">
               {group.category}

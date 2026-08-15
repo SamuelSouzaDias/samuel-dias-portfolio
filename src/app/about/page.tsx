@@ -43,7 +43,8 @@ export default function AboutPage() {
 
       <div className="mt-14 flex flex-col gap-12">
         <section>
-          <h2 className="text-xl font-semibold text-text">What I Do</h2>
+          <div className="w-12 border-t-4 border-gold" />
+          <h2 className="mt-4 text-xl font-semibold text-text">What I Do</h2>
           <p className="mt-4 text-base leading-relaxed text-text-muted">
             I build the layer between raw data and business decisions — from
             Databricks/PySpark pipelines to the executive dashboards people
@@ -55,7 +56,8 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-text">How I Work</h2>
+          <div className="w-12 border-t-4 border-gold" />
+          <h2 className="mt-4 text-xl font-semibold text-text">How I Work</h2>
           <p className="mt-4 text-base leading-relaxed text-text-muted">
             I default to ownership end-to-end — ingestion, modeling,
             governance, and the final report — rather than handing off pieces
@@ -67,7 +69,8 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-text">
+          <div className="w-12 border-t-4 border-gold" />
+          <h2 className="mt-4 text-xl font-semibold text-text">
             What I&apos;m Learning
           </h2>
           <p className="mt-4 text-base leading-relaxed text-text-muted">

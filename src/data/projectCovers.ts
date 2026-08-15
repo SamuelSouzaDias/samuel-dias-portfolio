@@ -9,6 +9,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// Shared navy-to-gold diagonal gradient used for project covers and, in a
+// lower-opacity form, other empty-state panels that borrow the same language.
+export const coverGradient = "linear-gradient(135deg, #0B1E3D 0%, #3C3014 100%)";
+
 export const projectCoverIcons: Record<string, LucideIcon> = {
   "core-analytics-platform-migration": LayoutDashboard,
   "payroll-integrity-analytics": ShieldCheck,
