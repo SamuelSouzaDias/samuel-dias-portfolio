@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="border-b border-border bg-bg-elevated">
+      <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-6 py-10">
           <ul className="flex flex-wrap justify-center gap-x-10 gap-y-4">
             {techStack.map((tech) => (
@@ -38,11 +38,14 @@ export default function Home() {
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="text-2xl font-semibold text-text">Impact Metrics</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 flex flex-col divide-y divide-gold/20 sm:flex-row sm:divide-x sm:divide-y-0">
             {impactMetrics.map((metric) => (
               <MetricCounter
                 key={metric.label}
-                value={metric.value}
+                target={metric.target}
+                prefix={metric.prefix}
+                suffix={metric.suffix}
+                display={metric.display}
                 label={metric.label}
               />
             ))}

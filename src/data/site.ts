@@ -30,8 +30,20 @@ export const techStack = [
   "Data Modeling",
 ] as const;
 
-export const impactMetrics = [
-  { value: "4+", label: "Years in Data & BI" },
-  { value: "Six-figure", label: "Business impact identified (payroll-integrity initiative)" },
-  { value: "~79%", label: "Growth in monthly active platform users" },
-] as const;
+export type ImpactMetric = {
+  target: number | null;
+  prefix?: string;
+  suffix?: string;
+  display?: string;
+  label: string;
+};
+
+export const impactMetrics: ImpactMetric[] = [
+  { target: 4, suffix: "+", label: "Years in Data & BI" },
+  {
+    target: null,
+    display: "Six-figure",
+    label: "Business impact identified (payroll-integrity initiative)",
+  },
+  { target: 79, prefix: "~", suffix: "%", label: "Growth in monthly active platform users" },
+];
