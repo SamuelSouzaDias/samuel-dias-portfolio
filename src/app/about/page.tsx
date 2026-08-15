@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -28,13 +29,14 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="mx-auto w-full max-w-[220px] shrink-0 lg:mx-0">
-          <div className="flex aspect-square w-full flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-bg-elevated text-center">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-gold-soft text-lg font-semibold text-gold">
-              SD
-            </span>
-            <span className="text-xs text-text-muted">
-              Photo coming soon
-            </span>
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-border bg-bg-elevated">
+            <Image
+              src="/images/samuel-photo.jpg"
+              alt="Samuel Dias"
+              fill
+              sizes="220px"
+              className="object-cover"
+            />
           </div>
         </div>
       </div>

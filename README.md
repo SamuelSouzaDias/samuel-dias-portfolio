@@ -36,20 +36,11 @@ src/
 └── styles/ (globals.css)    Design tokens (colors, fonts) via Tailwind's
                              CSS-first @theme configuration
 public/
-├── images/                  samuel-photo.jpg goes here (not yet added —
-│                            the site currently shows a labeled placeholder)
+├── images/                  samuel-photo.jpg (headshot, used on Hero and About)
 ├── icons/
 └── resume/                  samuel-dias-resume-complete.pdf (primary) and
-                             samuel-dias-resume-short.pdf (secondary) go here
+                             samuel-dias-resume-short.pdf (secondary)
 ```
-
-## Pending Assets
-
-A few assets referenced by the build spec haven't been supplied yet and need to be dropped in before those parts of the site are fully live:
-
-- `public/images/samuel-photo.jpg` — headshot. Until added, the Hero and About sections show a labeled "Photo coming soon" placeholder.
-- `public/resume/samuel-dias-resume-complete.pdf` — primary resume download (linked from the nav CTA, hero, and contact page).
-- `public/resume/samuel-dias-resume-short.pdf` — secondary, condensed resume download.
 
 ## Getting Started
 

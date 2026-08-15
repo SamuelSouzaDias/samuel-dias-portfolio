@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 
@@ -37,13 +38,15 @@ export default function Hero() {
         </div>
 
         <div className="mx-auto w-full max-w-xs lg:max-w-sm">
-          <div className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-bg-elevated text-center">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold-soft text-xl font-semibold text-gold">
-              SD
-            </span>
-            <span className="text-xs text-text-muted">
-              Photo coming soon
-            </span>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-bg-elevated">
+            <Image
+              src="/images/samuel-photo.jpg"
+              alt="Samuel Dias"
+              fill
+              priority
+              sizes="(min-width: 1024px) 24rem, 20rem"
+              className="object-cover"
+            />
           </div>
         </div>
       </div>
