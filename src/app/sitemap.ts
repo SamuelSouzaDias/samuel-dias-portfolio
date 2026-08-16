@@ -9,6 +9,7 @@ const staticRoutes = [
   "/experience",
   "/projects",
   "/skills",
+  "/courses",
   "/certifications",
   "/contact",
 ];

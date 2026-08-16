@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { GraduationCap } from "lucide-react";
-import { certifications } from "@/data/certifications";
 import { coverGradient } from "@/data/projectCovers";
 
 export const metadata: Metadata = {
   title: "Certifications",
-  description:
-    "Samuel Dias's certification roadmap, starting with the Microsoft PL-300 Power BI Data Analyst Associate.",
+  description: "Samuel Dias's certifications — coming soon.",
 };
 
 export default function CertificationsPage() {
@@ -29,12 +27,8 @@ export default function CertificationsPage() {
           className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-gold opacity-10"
         />
         <p className="relative text-base leading-relaxed text-text-muted">
-          No formal certifications completed yet — currently preparing for
-          the{" "}
-          <span className="font-medium text-text">
-            {certifications[0]?.name}
-          </span>{" "}
-          as the first target. Check back soon.
+          No formal certifications completed yet. This section will be
+          updated as certifications are completed — check back soon.
         </p>
       </div>
     </div>
