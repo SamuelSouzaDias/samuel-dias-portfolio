@@ -36,9 +36,11 @@ export default function Home() {
       </section>
 
       <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="text-2xl font-semibold text-text">Impact Metrics</h2>
-          <div className="mt-8 flex flex-col divide-y divide-gold/20 sm:flex-row sm:divide-x sm:divide-y-0">
+        <div className="mx-auto max-w-6xl px-6 py-8">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-text-muted">
+            Impact Metrics
+          </h2>
+          <div className="mt-5 flex flex-col divide-y divide-gold/20 sm:flex-row sm:divide-x sm:divide-y-0">
             {impactMetrics.map((metric) => (
               <MetricCounter
                 key={metric.label}

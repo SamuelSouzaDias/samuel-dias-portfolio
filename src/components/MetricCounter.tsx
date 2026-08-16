@@ -61,14 +61,14 @@ export default function MetricCounter({
   return (
     <div
       ref={ref}
-      className="flex flex-1 flex-col gap-2 py-6 sm:px-8 sm:py-0 sm:first:pl-0 sm:last:pr-0"
+      className="flex flex-1 flex-col gap-1.5 py-4 sm:px-8 sm:py-0 sm:first:pl-0 sm:last:pr-0"
     >
       <ShieldCheck
         strokeWidth={1.5}
         aria-hidden="true"
-        className="h-5 w-5 text-gold"
+        className="h-4 w-4 text-gold"
       />
-      <span className="text-3xl font-bold tracking-tight text-gold tabular-nums sm:text-4xl">
+      <span className="text-2xl font-semibold tracking-tight text-gold tabular-nums sm:text-3xl">
         {display ?? `${prefix}${count}${suffix}`}
       </span>
       <span className="text-sm text-text-muted">{label}</span>

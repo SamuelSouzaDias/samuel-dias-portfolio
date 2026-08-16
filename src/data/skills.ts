@@ -1,6 +1,21 @@
+import {
+  BarChart3,
+  Cloud,
+  Code2,
+  ShieldCheck,
+  type LucideIcon,
+} from "lucide-react";
+
 export type SkillCategory = {
   category: string;
   items: string[];
+};
+
+export const skillCategoryIcons: Record<string, LucideIcon> = {
+  "Analytics & BI": BarChart3,
+  Programming: Code2,
+  "Data Engineering & Cloud": Cloud,
+  "Data Governance & Quality": ShieldCheck,
 };
 
 export const skills: SkillCategory[] = [
