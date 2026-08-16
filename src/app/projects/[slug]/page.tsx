@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({
     <div className="mx-auto max-w-4xl px-6 py-16 lg:py-24">
       <Link
         href="/projects"
-        className="text-sm font-medium text-blue hover:underline"
+        className="text-link text-sm font-medium"
       >
         ← All projects
       </Link>

@@ -41,7 +41,7 @@ export default function ContactPage() {
         Prefer a shorter resume?{" "}
         <a
           href={site.resumeShort}
-          className="font-medium text-blue hover:underline"
+          className="text-link font-medium"
         >
           Download the one-page version
         </a>

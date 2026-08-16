@@ -48,18 +48,62 @@ body {
   border-radius: 2px;
 }
 
-/* Fades the hero photo's left and bottom edges into the page background,
+/* Fades all four edges of the hero photo into the page background,
    independent of the source file's own alpha channel. */
 .hero-photo-mask {
   -webkit-mask-image: linear-gradient(
       to right,
       transparent 0%,
       black 22%,
-      black 100%
+      black 78%,
+      transparent 100%
     ),
-    linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent 0%, black 22%, black 100%),
-    linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
+  mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 22%,
+      black 78%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
   mask-composite: intersect;
+}
+
+/* Shared inline-text-link treatment: gold accent, no default underline,
+   subtle glow on hover so it matches the button/nav hover treatment
+   instead of the browser's default blue link color. */
+.text-link {
+  color: var(--color-gold);
+  text-decoration-line: none;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-gold);
+  transition:
+    text-shadow 200ms ease-out,
+    text-decoration-line 200ms ease-out;
+}
+.text-link:hover {
+  text-decoration-line: underline;
+  text-shadow: 0 0 12px rgba(176, 141, 43, 0.55);
+}
+.text-link:visited {
+  color: var(--color-gold);
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-link {
+    transition: none;
+  }
 }

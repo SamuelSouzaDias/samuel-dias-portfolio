@@ -61,7 +61,7 @@ export default function Home() {
             </h2>
             <Link
               href="/projects"
-              className="text-sm font-medium text-blue hover:underline"
+              className="text-link text-sm font-medium"
             >
               View all projects →
             </Link>

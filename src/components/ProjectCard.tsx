@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <span className="text-sm font-medium text-blue group-hover:underline">
+        <span className="text-sm font-medium text-gold group-hover:underline group-hover:[text-shadow:0_0_12px_rgba(176,141,43,0.55)]">
           View case study →
         </span>
       </div>
