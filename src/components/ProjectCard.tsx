@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import type { Project } from "@/data/projects";
+import { useLanguage } from "@/context/LanguageContext";
+import { getContent } from "@/data/content";
 import ProjectCover from "./ProjectCover";
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { language } = useLanguage();
+  const t = getContent(language);
+  const translated = t.projectTranslations[project.slug];
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -27,7 +35,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </h3>
 
         <p className="text-sm leading-relaxed text-text-muted">
-          {project.overview}
+          {translated.overview}
         </p>
 
         <div className="mt-auto flex flex-wrap gap-x-4 gap-y-1 pt-2 text-xs text-text-muted">
@@ -37,7 +45,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <span className="text-sm font-medium text-gold group-hover:underline group-hover:[text-shadow:0_0_12px_rgba(176,141,43,0.55)]">
-          View case study →
+          {t.projectCard.viewCaseStudy}
         </span>
       </div>
     </Link>

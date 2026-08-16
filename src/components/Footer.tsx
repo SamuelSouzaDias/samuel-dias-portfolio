@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { navLinks, site } from "@/data/site";
+import { useLanguage } from "@/context/LanguageContext";
+import { getContent } from "@/data/content";
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = getContent(language);
+
   return (
     <footer className="border-t border-border bg-bg-elevated">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12">
@@ -9,9 +16,7 @@ export default function Footer() {
           <span className="font-semibold tracking-tight text-text">
             Samuel Dias
           </span>
-          <span className="text-sm text-text-muted">
-            Data &amp; Analytics Engineer
-          </span>
+          <span className="text-sm text-text-muted">{t.footer.role}</span>
         </div>
 
         <nav aria-label="Footer navigation">
@@ -22,7 +27,7 @@ export default function Footer() {
                   href={link.href}
                   className="text-text-muted transition-colors hover:text-text"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </Link>
               </li>
             ))}
@@ -55,13 +60,13 @@ export default function Footer() {
               href={`mailto:${site.email}`}
               className="text-text-muted transition-colors hover:text-gold"
             >
-              Email
+              {t.contact.email}
             </a>
           </li>
         </ul>
 
         <p className="text-xs text-text-muted">
-          &copy; {new Date().getFullYear()} Samuel Dias. All rights reserved.
+          &copy; {new Date().getFullYear()} Samuel Dias. {t.footer.copyrightSuffix}
         </p>
       </div>
     </footer>

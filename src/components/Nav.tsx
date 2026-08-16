@@ -4,10 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks, site } from "@/data/site";
+import { useLanguage } from "@/context/LanguageContext";
+import { getContent } from "@/data/content";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = getContent(language);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-bg/85 backdrop-blur">
@@ -30,59 +35,63 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-out after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gold after:shadow-[0_2px_10px_1px_rgba(176,141,43,0.4)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:scale-x-100 motion-reduce:after:transition-none motion-reduce:transition-none ${
+                className={`relative rounded-md px-2 py-2 text-sm font-medium transition-colors duration-200 ease-out after:absolute after:inset-x-2 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gold after:shadow-[0_2px_10px_1px_rgba(176,141,43,0.4)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:scale-x-100 motion-reduce:after:transition-none motion-reduce:transition-none ${
                   active
                     ? "text-gold after:scale-x-100"
                     : "text-text-muted hover:text-text"
                 }`}
               >
-                {link.label}
+                {t.nav[link.key]}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <LanguageToggle />
           <Link
-            href={site.resumeComplete}
+            href={site.resumeComplete[language]}
             className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-bg transition-[filter,box-shadow] duration-200 ease-out hover:shadow-[0_0_22px_4px_rgba(176,141,43,0.3)] hover:brightness-110 motion-reduce:transition-none"
           >
-            Download Resume
+            {t.nav.downloadResume}
           </Link>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-label="Toggle navigation menu"
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-text lg:hidden"
-        >
-          <span className="sr-only">Toggle menu</span>
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            aria-hidden="true"
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label="Toggle navigation menu"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-text"
           >
-            {open ? (
-              <path
-                d="M2 2L16 16M16 2L2 16"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M1 4H17M1 9H17M1 14H17"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
-        </button>
+            <span className="sr-only">Toggle menu</span>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              aria-hidden="true"
+            >
+              {open ? (
+                <path
+                  d="M2 2L16 16M16 2L2 16"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              ) : (
+                <path
+                  d="M1 4H17M1 9H17M1 14H17"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -102,18 +111,18 @@ export default function Nav() {
                       active ? "text-gold" : "text-text-muted hover:text-text"
                     }`}
                   >
-                    {link.label}
+                    {t.nav[link.key]}
                   </Link>
                 </li>
               );
             })}
             <li className="pt-2">
               <Link
-                href={site.resumeComplete}
+                href={site.resumeComplete[language]}
                 onClick={() => setOpen(false)}
                 className="block rounded-md bg-gold px-4 py-2 text-center text-sm font-semibold text-bg"
               >
-                Download Resume
+                {t.nav.downloadResume}
               </Link>
             </li>
           </ul>

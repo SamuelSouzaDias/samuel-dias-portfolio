@@ -5,19 +5,25 @@ export const site = {
   email: "samuel.dias.career@outlook.com",
   linkedin: "https://www.linkedin.com/in/samuelsouzadias",
   github: "https://github.com/SamuelSouzaDias",
-  resumeComplete: "/resume/samuel-dias-resume-complete.pdf",
-  resumeShort: "/resume/samuel-dias-resume-short.pdf",
+  resumeComplete: {
+    en: "/resume/samuel-dias-resume-complete.pdf",
+    pt: "/resume/samuel-dias-resume-complete-pt.pdf",
+  },
+  resumeShort: {
+    en: "/resume/samuel-dias-resume-short.pdf",
+    pt: "/resume/samuel-dias-resume-short-pt.pdf",
+  },
 } as const;
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Projects", href: "/projects" },
-  { label: "Skills", href: "/skills" },
-  { label: "Courses", href: "/courses" },
-  { label: "Certifications", href: "/certifications" },
-  { label: "Contact", href: "/contact" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "experience", href: "/experience" },
+  { key: "projects", href: "/projects" },
+  { key: "skills", href: "/skills" },
+  { key: "courses", href: "/courses" },
+  { key: "certifications", href: "/certifications" },
+  { key: "contact", href: "/contact" },
 ] as const;
 
 export const techStack = [
@@ -32,19 +38,15 @@ export const techStack = [
 ] as const;
 
 export type ImpactMetric = {
+  key: "yearsInData" | "businessImpact" | "growth";
   target: number | null;
   prefix?: string;
   suffix?: string;
   display?: string;
-  label: string;
 };
 
 export const impactMetrics: ImpactMetric[] = [
-  { target: 4, suffix: "+", label: "Years in Data & BI" },
-  {
-    target: null,
-    display: "Six-figure",
-    label: "Business impact identified (payroll-integrity initiative)",
-  },
-  { target: 79, prefix: "~", suffix: "%", label: "Growth in monthly active platform users" },
+  { key: "yearsInData", target: 4, suffix: "+" },
+  { key: "businessImpact", target: null, display: "Six-figure" },
+  { key: "growth", target: 79, prefix: "~", suffix: "%" },
 ];

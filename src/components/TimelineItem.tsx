@@ -4,7 +4,7 @@ export default function TimelineItem({ heading, bullets }: ExperienceBlock) {
   return (
     <div className="relative border-l border-border pl-8">
       <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-gold" />
-      <h3 className="text-lg font-semibold text-text">{heading}</h3>
+      <h2 className="text-lg font-semibold text-text">{heading}</h2>
       <ul className="mt-4 flex flex-col gap-3">
         {bullets.map((bullet) => (
           <li

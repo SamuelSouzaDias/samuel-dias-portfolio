@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
+import { useLanguage } from "@/context/LanguageContext";
+import { getContent } from "@/data/content";
 
 export default function Hero() {
+  const { language } = useLanguage();
+  const t = getContent(language);
+
   return (
     <section className="overflow-x-hidden border-b border-border">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
@@ -11,28 +18,24 @@ export default function Hero() {
             Samuel Dias
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-text sm:text-5xl">
-            Data &amp; Analytics Engineer
-            <span className="block text-text-muted">
-              — with 4+ years of BI foundation
-            </span>
+            {t.hero.title}
+            <span className="block text-text-muted">{t.hero.titleSub}</span>
           </h1>
           <p className="mx-auto max-w-xl text-lg leading-relaxed text-text-muted lg:mx-0">
-            I build the layer between raw data and business decisions — and I
-            care more about whether a number can be trusted than about how a
-            dashboard looks.
+            {t.hero.body}
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2 lg:justify-start">
             <Link
               href="/projects"
               className="rounded-md bg-gold px-6 py-3 text-sm font-semibold text-bg transition-[filter,box-shadow] duration-200 ease-out hover:shadow-[0_0_24px_4px_rgba(176,141,43,0.3)] hover:brightness-110 motion-reduce:transition-none"
             >
-              Explore My Work
+              {t.hero.ctaPrimary}
             </Link>
             <Link
-              href={site.resumeComplete}
+              href={site.resumeComplete[language]}
               className="rounded-md border border-border px-6 py-3 text-sm font-semibold text-text transition-[color,border-color,filter,box-shadow] duration-200 ease-out hover:border-gold hover:text-gold hover:shadow-[0_0_20px_3px_rgba(176,141,43,0.28)] hover:brightness-110 motion-reduce:transition-none"
             >
-              Download Resume
+              {t.hero.ctaSecondary}
             </Link>
           </div>
         </div>
